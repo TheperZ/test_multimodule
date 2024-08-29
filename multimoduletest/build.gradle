@@ -7,6 +7,8 @@ plugins {
 bootJar { enabled = false }
 jar { enabled = true }
 
+
+
 allprojects{
 	group = 'com.example'
 	version = '0.0.1-SNAPSHOT'
@@ -15,6 +17,7 @@ allprojects{
 	repositories {
 		mavenCentral()
 	}
+
 
 }
 
@@ -42,23 +45,23 @@ subprojects{
 	}
 
 	dependencies {
-		//springboot
+
 		implementation 'org.springframework.boot:spring-boot-starter-web'
-
-
-		//lombok
-		annotationProcessor 'org.projectlombok:lombok'
 		compileOnly 'org.projectlombok:lombok'
+		annotationProcessor 'org.projectlombok:lombok'
+		annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
-		//test
 		testImplementation 'org.springframework.boot:spring-boot-starter-test'
-		testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+		testCompileOnly 'org.projectlombok:lombok'
+		testAnnotationProcessor 'org.projectlombok:lombok'
+	}
+
+	test {
+		useJUnitPlatform()
 	}
 
 }
 
 
 
-tasks.named('test') {
-	useJUnitPlatform()
-}
+

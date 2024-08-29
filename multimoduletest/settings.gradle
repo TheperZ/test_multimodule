@@ -1,3 +1,4 @@
 rootProject.name = 'multimoduletest'
 
 include 'dbmodule'
+include 'api'
