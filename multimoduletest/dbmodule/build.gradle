@@ -2,16 +2,13 @@ bootJar {enabled = false}
 jar {enabled = true}
 
 
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
 
 
 dependencies {
 
     runtimeOnly 'org.postgresql:postgresql'
+    //api->간접 참조하고 있는 모듈도 참조 가능, implementation->직접 참조하고 있는 모듈만 참조 가능
+    api 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
 
 tasks.named('test') {
