@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: dbmodule
+  datasource:
+    url: jdbc:postgresql://localhost:5432/multimoduletest
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    show-sql: true
