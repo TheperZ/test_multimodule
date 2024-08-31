@@ -21,7 +21,9 @@ public class PostService {
 
     public void savePost(PostReq postReq) {
 
-        Post post = postReq.toEntity(postReq);
+
+
+        Post post = postReq.toEntity();
 
         postRepository.save(post);
 

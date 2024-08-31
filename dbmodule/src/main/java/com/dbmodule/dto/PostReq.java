@@ -9,7 +9,7 @@ public record PostReq(
 
 ) {
 
-    public Post toEntity(PostReq postReq) {
+    public Post toEntity() {
 
         return Post.builder()
                 .title(title)
